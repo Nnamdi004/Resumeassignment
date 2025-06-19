@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chibueze Onugha | Resume</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header with navigation -->
   <header class="hero">
     <div class="container">
-      <h1>Chibueze Onugha</h1>
+      <h1 class="name">Chibueze Onugha</h1>
       <p class="tagline">Front-End Developer | Problem Solver | Lifelong Learner</p>
       <nav>
         <ul id="navbar">
@@ -19,6 +22,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#interests">Hobbies</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <button id="toggle-menu" type="button" aria-label="Toggle navigation menu">☰</button>
@@ -26,27 +30,25 @@
     </div>
   </header>
 
-  <!-- Main content -->
   <main>
-    <!-- About Me Section -->
-    <section id="about" class="section">
+    <section id="about" class="section fade-in">
       <div class="container">
         <h2>About Me</h2>
         <p>
-          I am a passionate front-end web developer with a strong background in crafting accessible, responsive digital interfaces.
-          I enjoy building things that live on the web, focusing on performance and user experience.
+          I'm a passionate <span class="highlight">front-end developer</span> with a knack for creating 
+          <em>visually stunning</em> and <strong>user-friendly</strong> web experiences. I believe that good design 
+          is about simplicity and performance — crafting interfaces that delight users.
         </p>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section bg-light">
+    <section id="skills" class="section bg-light fade-in delay-1">
       <div class="container">
         <h2>Skills</h2>
         <div class="skills-grid">
           <div class="skill">HTML5</div>
-          <div class="skill">CSS3</div>
-          <div class="skill">JavaScript</div>
+          <div class="skill">CSS3 & Animations</div>
+          <div class="skill">JavaScript (ES6+)</div>
           <div class="skill">Responsive Design</div>
           <div class="skill">Git & GitHub</div>
           <div class="skill">Debugging & Optimization</div>
@@ -54,62 +56,68 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="section fade-in delay-2">
       <div class="container">
         <h2>Work Experience</h2>
         <article class="experience-item">
           <h3>Web Developer Intern - FutureTech Inc.</h3>
           <p class="duration">Jan 2025 - Apr 2025</p>
           <p>
-            Contributed to internal tools using modern HTML, CSS, and JavaScript.
-            Collaborated in agile sprints and enhanced UI responsiveness.
+            Developed sleek UI components and optimized site performance. Collaborated on cross-functional teams using Agile methodologies.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-light">
+    <section id="projects" class="section bg-light fade-in delay-3">
       <div class="container">
         <h2>Projects</h2>
         <div class="projects-grid">
           <div class="project-card">
             <h3>My Portfolio Website</h3>
-            <p>🌐 A fully responsive portfolio site showcasing my resume, projects, and contact details. Built with HTML, CSS, and JavaScript without any frameworks.</p>
+            <p>A stylish, responsive portfolio showcasing my work and resume, built completely from scratch.</p>
           </div>
           <div class="project-card">
             <h3>Form Validator</h3>
-            <p>✅ JavaScript-based form validation tool that improves UX by guiding users through field completion in real-time.</p>
+            <p>An intuitive JavaScript form validation tool that helps users fill forms correctly with instant feedback.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="interests" class="section fade-in delay-4">
+      <div class="container">
+        <h2>Hobbies & Interests</h2>
+        <p>
+          When I’m not coding, I love <span class="highlight">photography</span>, exploring nature through hiking, and
+          diving into books on <em>design psychology</em> and <strong>user experience</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section fade-in delay-5">
       <div class="container">
         <h2>Contact</h2>
         <form id="contact-form" novalidate>
           <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
           <input type="email" name="email" placeholder="Email" required aria-label="Email" />
           <textarea name="message" placeholder="Message" required aria-label="Message"></textarea>
-          <button type="submit">Send</button>
+          <button type="submit" class="btn-primary">Send</button>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 Chibueze Onugha | Built with HTML, CSS & JS</p>
       <div class="social-links">
-        <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+        <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer">🐱 GitHub</a>
         <a href="https://linkedin.com/in/chibueze-onugha" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-        <a href="mailto:c.onugha@alustudent.com">🔗 Email</a>
+        <a href="mailto:c.onugha@alustudent.com">✉️ Email</a>
       </div>
     </div>
   </footer>
 </body>
 </html>
+
