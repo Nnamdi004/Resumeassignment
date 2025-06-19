@@ -7,7 +7,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
-
+  
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
@@ -17,32 +17,30 @@
       <h1 class="name">Chibueze Onugha</h1>
       <p class="tagline">Front-End Developer | Problem Solver | Lifelong Learner</p>
       <nav>
-        <ul id="navbar" role="menubar">
-          <li role="none"><a href="#about" class="active-link" role="menuitem" tabindex="0">About</a></li>
-          <li role="none"><a href="#skills" role="menuitem" tabindex="-1">Skills</a></li>
-          <li role="none"><a href="#experience" role="menuitem" tabindex="-1">Experience</a></li>
-          <li role="none"><a href="#projects" role="menuitem" tabindex="-1">Projects</a></li>
-          <li role="none"><a href="#interests" role="menuitem" tabindex="-1">Hobbies</a></li>
-          <li role="none"><a href="#contact" role="menuitem" tabindex="-1">Contact</a></li>
+        <ul id="navbar">
+          <li><a href="#about" class="active-link">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#interests">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="toggle-menu" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+        <button id="toggle-menu" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="about" class="section fade-in" tabindex="-1">
+    <section id="about" class="section fade-in">
       <div class="container">
         <h2>About Me</h2>
         <p>
-          I'm a passionate <span class="highlight">front-end developer</span> with a knack for creating 
-          <em>visually stunning</em> and <strong>user-friendly</strong> web experiences. I believe that good design 
-          is about simplicity and performance — crafting interfaces that delight users.
+          I'm a passionate <span class="highlight">front-end developer</span> who enjoys building clean, responsive websites and making sure users have a great experience.
         </p>
       </div>
     </section>
 
-    <section id="skills" class="section bg-light fade-in delay-1" tabindex="-1">
+    <section id="skills" class="section bg-light fade-in delay-1">
       <div class="container">
         <h2>Skills</h2>
         <div class="skills-grid">
@@ -56,69 +54,66 @@
       </div>
     </section>
 
-    <section id="experience" class="section fade-in delay-2" tabindex="-1">
+    <section id="experience" class="section fade-in delay-2">
       <div class="container">
         <h2>Work Experience</h2>
         <article class="experience-item">
           <h3>Web Developer Intern - FutureTech Inc.</h3>
           <p class="duration">Jan 2025 - Apr 2025</p>
           <p>
-            Developed sleek UI components and optimized site performance. Collaborated on cross-functional teams using Agile methodologies.
+            Developed sleek UI components and optimized site performance. Collaborated with designers and back-end developers in an Agile environment.
           </p>
         </article>
       </div>
     </section>
 
-    <section id="projects" class="section bg-light fade-in delay-3" tabindex="-1">
+    <section id="projects" class="section bg-light fade-in delay-3">
       <div class="container">
         <h2>Projects</h2>
         <div class="projects-grid">
-          <div class="project-card" tabindex="0" aria-label="My Portfolio Website project">
+          <div class="project-card">
             <h3>My Portfolio Website</h3>
-            <p>A stylish, responsive portfolio showcasing my work and resume, built completely from scratch.</p>
+            <p>🌐 A fully responsive portfolio site showcasing my resume, projects, and contact details. Built with HTML, CSS, and JavaScript without any frameworks.</p>
           </div>
-          <div class="project-card" tabindex="0" aria-label="Form Validator project">
+          <div class="project-card">
             <h3>Form Validator</h3>
-            <p>An intuitive JavaScript form validation tool that helps users fill forms correctly with instant feedback.</p>
+            <p>✅ JavaScript-based form validation tool that improves UX by guiding users through field completion in real-time.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="interests" class="section fade-in delay-4" tabindex="-1">
+    <section id="interests" class="section fade-in delay-4">
       <div class="container">
         <h2>Hobbies & Interests</h2>
         <p>
-          When I’m not coding, I love <span class="highlight">photography</span>, exploring nature through hiking, and
-          diving into books on <em>design psychology</em> and <strong>user experience</strong>.
+          Outside of coding, I enjoy playing <span class="highlight">football</span>, listening to <span class="highlight">music</span>, <span class="highlight">dancing</span>, and <span class="highlight">hanging out with friends</span>.
         </p>
       </div>
     </section>
 
-    <section id="contact" class="section fade-in delay-5" tabindex="-1">
+    <section id="contact" class="section fade-in delay-5">
       <div class="container">
         <h2>Contact</h2>
-        <form id="contact-form" novalidate aria-label="Contact form">
-          <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
-          <input type="email" name="email" placeholder="Email" required aria-label="Email" />
-          <textarea name="message" placeholder="Message" required aria-label="Message"></textarea>
+        <form id="contact-form" novalidate>
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" required></textarea>
           <button type="submit" class="btn-primary">Send</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="container">
       <p>© 2025 Chibueze Onugha | Built with HTML, CSS & JS</p>
-      <div class="social-links" role="list">
-        <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="GitHub">🐱 GitHub</a>
-        <a href="https://linkedin.com/in/chibueze-onugha" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="LinkedIn">🔗 LinkedIn</a>
-        <a href="mailto:c.onugha@alustudent.com" role="listitem" aria-label="Email">✉️ Email</a>
+      <div class="social-links">
+        <a href="https://github.com/Nnamdi004" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/chibueze-onugha" target="_blank">LinkedIn</a>
+        <a href="mailto:c.onugha@alustudent.com">Email</a>
       </div>
     </div>
   </footer>
 </body>
 </html>
-
-
