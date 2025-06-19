@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Toggle mobile navigation
   const toggleMenu = document.getElementById("toggle-menu");
   const navbar = document.getElementById("navbar");
+
   toggleMenu.addEventListener("click", () => {
     navbar.classList.toggle("active");
   });
@@ -23,6 +24,29 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => {
     section.classList.add("hidden");
     observer.observe(section);
+  });
+
+  // Back to top button
+  const backToTop = document.createElement('button');
+  backToTop.textContent = '↑';
+  backToTop.setAttribute('aria-label', 'Back to top');
+  backToTop.style.position = 'fixed';
+  backToTop.style.right = '1rem';
+  backToTop.style.bottom = '4rem';
+  backToTop.style.padding = '0.5rem 0.7rem';
+  backToTop.style.fontSize = '1.5rem';
+  backToTop.style.border = 'none';
+  backToTop.style.borderRadius = '4px';
+  backToTop.style.cursor = 'pointer';
+  backToTop.style.backgroundColor = '#006d77';
+  backToTop.style.color = '#fff';
+  backToTop.style.display = 'none';
+  backToTop.style.zIndex = '1000';
+  backToTop.style.transition = 'opacity 0.3s ease';
+  document.body.appendChild(backToTop);
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // Dark/Light mode toggle button
@@ -106,29 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Back to top button
-  const backToTop = document.createElement('button');
-  backToTop.textContent = '↑';
-  backToTop.setAttribute('aria-label', 'Back to top');
-  backToTop.style.position = 'fixed';
-  backToTop.style.right = '1rem';
-  backToTop.style.bottom = '4rem';
-  backToTop.style.padding = '0.5rem 0.7rem';
-  backToTop.style.fontSize = '1.5rem';
-  backToTop.style.border = 'none';
-  backToTop.style.borderRadius = '4px';
-  backToTop.style.cursor = 'pointer';
-  backToTop.style.backgroundColor = '#006d77';
-  backToTop.style.color = '#fff';
-  backToTop.style.display = 'none';
-  backToTop.style.zIndex = '1000';
-  backToTop.style.transition = 'opacity 0.3s ease';
-  document.body.appendChild(backToTop);
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
   // Form validation
   const form = document.getElementById("contact-form");
   form.addEventListener("submit", function (e) {
@@ -140,6 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       alert("Please fill out all fields.");
     }
+  });
+});
+
   });
 });
 
