@@ -12,11 +12,11 @@
   <script defer src="script.js"></script>
 </head>
 <body class="dark-mode">
-  <header class="hero" role="banner">
+  <header class="hero">
     <div class="container">
       <h1 class="name">Chibueze Onugha</h1>
       <p class="tagline">Front-End Developer | Problem Solver | Lifelong Learner</p>
-      <nav role="navigation" aria-label="Primary navigation">
+      <nav>
         <ul id="navbar">
           <li><a href="#about" class="active-link">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -25,39 +25,39 @@
           <li><a href="#interests">Hobbies</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="toggle-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar">☰</button>
+        <button id="toggle-menu" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="about" class="section fade-in" tabindex="-1" aria-labelledby="about-heading">
+    <section id="about" class="section fade-in">
       <div class="container">
-        <h2 id="about-heading">About Me</h2>
+        <h2>About Me</h2>
         <p>
           I'm a passionate <span class="highlight">front-end developer</span> who enjoys building clean, responsive websites and making sure users have a great experience.
         </p>
       </div>
     </section>
 
-    <section id="skills" class="section bg-light fade-in delay-1" tabindex="-1" aria-labelledby="skills-heading">
+    <section id="skills" class="section bg-light fade-in delay-1">
       <div class="container">
-        <h2 id="skills-heading">Skills</h2>
-        <div class="skills-grid" role="list">
-          <div class="skill" role="listitem">HTML5</div>
-          <div class="skill" role="listitem">CSS3 & Animations</div>
-          <div class="skill" role="listitem">JavaScript (ES6+)</div>
-          <div class="skill" role="listitem">Responsive Design</div>
-          <div class="skill" role="listitem">Git & GitHub</div>
-          <div class="skill" role="listitem">Debugging & Optimization</div>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">HTML5</div>
+          <div class="skill">CSS3 & Animations</div>
+          <div class="skill">JavaScript (ES6+)</div>
+          <div class="skill">Responsive Design</div>
+          <div class="skill">Git & GitHub</div>
+          <div class="skill">Debugging & Optimization</div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section fade-in delay-2" tabindex="-1" aria-labelledby="experience-heading">
+    <section id="experience" class="section fade-in delay-2">
       <div class="container">
-        <h2 id="experience-heading">Work Experience</h2>
-        <article class="experience-item" aria-label="Web Developer Intern at FutureTech Inc.">
+        <h2>Work Experience</h2>
+        <article class="experience-item">
           <h3>Web Developer Intern - FutureTech Inc.</h3>
           <p class="duration">Jan 2025 - Apr 2025</p>
           <p>
@@ -67,77 +67,56 @@
       </div>
     </section>
 
-    <section id="projects" class="section bg-light fade-in delay-3" tabindex="-1" aria-labelledby="projects-heading">
+    <section id="projects" class="section bg-light fade-in delay-3">
       <div class="container">
-        <h2 id="projects-heading">Projects</h2>
-        <div class="projects-grid" role="list">
-          <article class="project-card" role="listitem" tabindex="0" aria-label="My Portfolio Website project">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
             <h3>My Portfolio Website</h3>
             <p>🌐 A fully responsive portfolio site showcasing my resume, projects, and contact details. Built with HTML, CSS, and JavaScript without any frameworks.</p>
-          </article>
-          <article class="project-card" role="listitem" tabindex="0" aria-label="Form Validator project">
+          </div>
+          <div class="project-card">
             <h3>Form Validator</h3>
             <p>✅ JavaScript-based form validation tool that improves UX by guiding users through field completion in real-time.</p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="interests" class="section fade-in delay-4" tabindex="-1" aria-labelledby="interests-heading">
+    <section id="interests" class="section fade-in delay-4">
       <div class="container">
-        <h2 id="interests-heading">Hobbies & Interests</h2>
+        <h2>Hobbies & Interests</h2>
         <p>
           Outside of coding, I enjoy playing <span class="highlight">football</span>, listening to <span class="highlight">music</span>, <span class="highlight">dancing</span>, and <span class="highlight">hanging out with friends</span>.
         </p>
       </div>
     </section>
 
-    <section id="contact" class="section fade-in delay-5" tabindex="-1" aria-labelledby="contact-heading">
+    <section id="contact" class="section fade-in delay-5">
       <div class="container">
-        <h2 id="contact-heading">Contact</h2>
-        <form id="contact-form" novalidate aria-describedby="contact-desc">
-          <p id="contact-desc" class="visually-hidden">Contact form to send me a message with your name, email, and message.</p>
-          <label for="name" class="visually-hidden">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" />
-          
-          <label for="email" class="visually-hidden">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" required aria-required="true" />
-          
-          <label for="message" class="visually-hidden">Message</label>
-          <textarea id="message" name="message" placeholder="Message" required aria-required="true"></textarea>
-          
+        <h2>Contact</h2>
+        <form id="contact-form" novalidate>
+          <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
+          <input type="email" name="email" placeholder="Email" required aria-label="Email" />
+          <textarea name="message" placeholder="Message" required aria-label="Message"></textarea>
           <button type="submit" class="btn-primary">Send</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="container">
       <p>© 2025 Chibueze Onugha | Built with HTML, CSS & JS</p>
-      <nav aria-label="Social media links" class="social-links">
+      <div class="social-links" role="contentinfo">
         <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub 🐙</a>
         <a href="https://linkedin.com/in/chibueze-onugha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn 💼</a>
-        <a href="mailto:c.onugha@alustudent.com" aria-label="Send Email">Email 📧</a>
-      </nav>
+        <a href="https://mail.google.com/mail/u/0/#inbox" aria-label="Send Email">Email 📧</a>
+      </div>
     </div>
   </footer>
-
-  <!-- Visually hidden class for accessibility -->
-  <style>
-    .visually-hidden {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip: rect(0,0,0,0) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
-  </style>
 </body>
 </html>
+
 
 
