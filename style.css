@@ -1,16 +1,16 @@
-/* Fonts */
+/* Fonts & Base */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #121212, #1f1f2e);
-  color: #eee;
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #c9d1d9;
   line-height: 1.6;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
-  color: #f0a500;
+  color: #58a6ff;
   margin-bottom: 0.5rem;
 }
 
@@ -19,9 +19,9 @@ h1.name {
   font-weight: 700;
   font-size: 3rem;
   letter-spacing: 0.1em;
-  color: #ff7f50;
+  color: #4fd1ff;
   margin-bottom: 0.2rem;
-  text-shadow: 0 2px 5px rgba(255,127,80,0.5);
+  text-shadow: 0 2px 8px rgba(79, 209, 255, 0.6);
 }
 
 .tagline {
@@ -29,9 +29,9 @@ h1.name {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
-  color: #ffa64d;
+  color: #8acbff;
   margin-bottom: 2rem;
-  text-shadow: 0 1px 3px rgba(255,166,77,0.7);
+  text-shadow: 0 1px 4px rgba(138, 203, 255, 0.6);
 }
 
 .container {
@@ -51,7 +51,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #ffa64d;
+  color: #4fd1ff;
   font-weight: 600;
   text-decoration: none;
   padding: 0.5rem 0;
@@ -61,8 +61,9 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active-link {
-  color: #ff7f50;
-  border-bottom-color: #ff7f50;
+  color: #1ad1ff;
+  border-bottom-color: #1ad1ff;
+  text-shadow: 0 0 6px #1ad1ffaa;
 }
 
 #toggle-menu {
@@ -70,7 +71,7 @@ nav ul li a.active-link {
   font-size: 2rem;
   background: transparent;
   border: none;
-  color: #ffa64d;
+  color: #4fd1ff;
   cursor: pointer;
 }
 
@@ -82,17 +83,17 @@ nav ul li a.active-link {
 }
 
 .bg-light {
-  background-color: #292c3c;
+  background-color: #21262d;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(255,127,80,0.1);
+  box-shadow: 0 10px 25px rgba(31, 167, 255, 0.15);
 }
 
 /* Highlights */
 .highlight {
-  color: #ff7f50;
+  color: #1ad1ff;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  text-shadow: 0 0 8px #ff7f50aa;
+  text-shadow: 0 0 8px #1ad1ffaa;
 }
 
 /* Skills Grid */
@@ -104,21 +105,21 @@ nav ul li a.active-link {
 }
 
 .skill {
-  background: #3a3c50;
-  color: #ffd9b3;
+  background: #2d333b;
+  color: #8aeaff;
   text-align: center;
   padding: 1.2rem;
   border-radius: 10px;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
-  box-shadow: 0 0 15px #ff7f50aa;
+  box-shadow: 0 0 15px #1ad1ffaa;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
 }
 
 .skill:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px #ff7f50dd;
+  box-shadow: 0 0 30px #1ad1ffff;
 }
 
 /* Experience */
@@ -127,22 +128,22 @@ nav ul li a.active-link {
   font-family: 'Roboto', sans-serif;
   font-size: 1.05rem;
   line-height: 1.4;
-  color: #e0e0e0;
-  background: #2d2f45;
+  color: #c9d1d9;
+  background: #2f363d;
   padding: 1rem 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 5px 15px #ff7f50aa;
+  box-shadow: 0 5px 15px #1ad1ffaa;
   transition: background-color 0.3s ease;
 }
 
 .experience-item:hover {
-  background-color: #ff7f50;
-  color: #121212;
+  background-color: #1ad1ff;
+  color: #0d1117;
 }
 
 .duration {
   font-style: italic;
-  color: #f0a500;
+  color: #58a6ff;
   font-weight: 600;
 }
 
@@ -155,20 +156,22 @@ nav ul li a.active-link {
 }
 
 .project-card {
-  background: #3a3c50;
-  color: #ffd9b3;
+  background: #2d333b;
+  color: #8aeaff;
   padding: 1.5rem;
   border-radius: 14px;
-  box-shadow: 0 0 30px #ff7f50aa;
+  box-shadow: 0 0 30px #1ad1ffaa;
   transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
   cursor: pointer;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus {
+  outline: none;
   transform: translateY(-8px) rotate(-1deg);
-  box-shadow: 0 0 45px #ff7f50ff;
-  background-color: #ff7f50;
-  color: #121212;
+  box-shadow: 0 0 45px #1ad1ffff;
+  background-color: #1ad1ff;
+  color: #0d1117;
 }
 
 /* Contact Form */
@@ -185,16 +188,16 @@ input, textarea {
   padding: 0.85rem;
   border-radius: 8px;
   border: none;
-  background: #292c3c;
-  color: #fff;
+  background: #21262d;
+  color: #c9d1d9;
   font-size: 1rem;
-  box-shadow: 0 0 8px #ff7f5080;
+  box-shadow: 0 0 8px #1ad1ff80;
   transition: box-shadow 0.3s ease;
 }
 
 input:focus, textarea:focus {
   outline: none;
-  box-shadow: 0 0 15px #ff7f50dd;
+  box-shadow: 0 0 15px #1ad1ffff;
 }
 
 textarea {
@@ -203,27 +206,30 @@ textarea {
 }
 
 button.btn-primary {
-  background: #ff7f50;
+  background: #1ad1ff;
   border: none;
   padding: 0.9rem;
   font-weight: 700;
   font-size: 1.1rem;
   border-radius: 8px;
   cursor: pointer;
-  color: #121212;
-  box-shadow: 0 0 20px #ff7f50cc;
+  color: #0d1117;
+  box-shadow: 0 0 20px #1ad1ffcc;
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-button.btn-primary:hover {
-  background-color: #ffa76b;
-  box-shadow: 0 0 35px #ffa76bcc;
+button.btn-primary:hover,
+button.btn-primary:focus {
+  background-color: #00c3ff;
+  box-shadow: 0 0 35px #00c3ffcc;
+  outline: none;
+  color: #f0f8ff;
 }
 
 /* Footer */
 footer {
-  background: #121217;
-  color: #ffa64d;
+  background: #0d1117;
+  color: #58a6ff;
   text-align: center;
   padding: 1.5rem 0;
   font-family: 'Montserrat', sans-serif;
@@ -238,14 +244,17 @@ footer {
 }
 
 .social-links a {
-  color: #ffa64d;
+  color: #58a6ff;
   font-size: 1.3rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-  color: #ff7f50;
+.social-links a:hover,
+.social-links a:focus {
+  color: #1ad1ff;
+  outline: none;
+  text-shadow: 0 0 8px #1ad1ffbb;
 }
 
 /* Responsive Navigation */
@@ -295,5 +304,31 @@ footer {
   }
 }
 
-/* Dark mode styles toggled via JS remain the same or can be adjusted similarly */
+/* Dark mode toggle styles */
+.dark-mode {
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #c9d1d9;
+}
 
+.dark-mode nav ul li a {
+  color: #4fd1ff;
+}
+
+.dark-mode nav ul li a:hover,
+.dark-mode nav ul li a.active-link {
+  color: #1ad1ff;
+}
+
+.dark-mode .skill,
+.dark-mode .project-card,
+.dark-mode .experience-item,
+.dark-mode input,
+.dark-mode textarea {
+  background: #2d333b;
+  color: #8aeaff;
+}
+
+.dark-mode button.btn-primary {
+  background: #1ad1ff;
+  color: #0d1117;
+}
