@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Toggle mobile nav menu
   toggleMenu.addEventListener("click", () => {
     navbar.classList.toggle("active");
-    const expanded = toggleMenu.getAttribute("aria-expanded") === "true" || false;
-    toggleMenu.setAttribute("aria-expanded", !expanded);
+    const expanded = toggleMenu.getAttribute("aria-expanded") === "true";
+    toggleMenu.setAttribute("aria-expanded", (!expanded).toString());
   });
 
   // Smooth scroll on nav link click
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         // Close mobile nav after clicking
         navbar.classList.remove("active");
-        toggleMenu.setAttribute("aria-expanded", false);
+        toggleMenu.setAttribute("aria-expanded", "false");
       }
     });
   });
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
+
     backToTop.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
@@ -116,16 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Toggle theme on button click
   toggleDarkMode.addEventListener("click", () => {
     if (document.body.classList.contains("dark-mode")) {
-      document.body.classList.remove("dark-mode");
-      document.body.classList.add("light-mode");
+      document.body.classList.replace("dark-mode", "light-mode");
       toggleDarkMode.textContent = "🌙";
       localStorage.setItem("theme", "light");
     } else {
-      document.body.classList.remove("light-mode");
-      document.body.classList.add("dark-mode");
+      document.body.classList.replace("light-mode", "dark-mode");
       toggleDarkMode.textContent = "☀️";
       localStorage.setItem("theme", "dark");
     }
   });
 });
+
 
