@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chibueze Onugha | Resume</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
 
@@ -17,21 +17,21 @@
       <h1 class="name">Chibueze Onugha</h1>
       <p class="tagline">Front-End Developer | Problem Solver | Lifelong Learner</p>
       <nav>
-        <ul id="navbar">
-          <li><a href="#about" class="active-link">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#interests">Hobbies</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul id="navbar" role="menubar">
+          <li role="none"><a href="#about" class="active-link" role="menuitem" tabindex="0">About</a></li>
+          <li role="none"><a href="#skills" role="menuitem" tabindex="-1">Skills</a></li>
+          <li role="none"><a href="#experience" role="menuitem" tabindex="-1">Experience</a></li>
+          <li role="none"><a href="#projects" role="menuitem" tabindex="-1">Projects</a></li>
+          <li role="none"><a href="#interests" role="menuitem" tabindex="-1">Hobbies</a></li>
+          <li role="none"><a href="#contact" role="menuitem" tabindex="-1">Contact</a></li>
         </ul>
-        <button id="toggle-menu" type="button" aria-label="Toggle navigation menu">☰</button>
+        <button id="toggle-menu" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="about" class="section fade-in">
+    <section id="about" class="section fade-in" tabindex="-1">
       <div class="container">
         <h2>About Me</h2>
         <p>
@@ -42,7 +42,7 @@
       </div>
     </section>
 
-    <section id="skills" class="section bg-light fade-in delay-1">
+    <section id="skills" class="section bg-light fade-in delay-1" tabindex="-1">
       <div class="container">
         <h2>Skills</h2>
         <div class="skills-grid">
@@ -56,7 +56,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section fade-in delay-2">
+    <section id="experience" class="section fade-in delay-2" tabindex="-1">
       <div class="container">
         <h2>Work Experience</h2>
         <article class="experience-item">
@@ -69,15 +69,15 @@
       </div>
     </section>
 
-    <section id="projects" class="section bg-light fade-in delay-3">
+    <section id="projects" class="section bg-light fade-in delay-3" tabindex="-1">
       <div class="container">
         <h2>Projects</h2>
         <div class="projects-grid">
-          <div class="project-card">
+          <div class="project-card" tabindex="0" aria-label="My Portfolio Website project">
             <h3>My Portfolio Website</h3>
             <p>A stylish, responsive portfolio showcasing my work and resume, built completely from scratch.</p>
           </div>
-          <div class="project-card">
+          <div class="project-card" tabindex="0" aria-label="Form Validator project">
             <h3>Form Validator</h3>
             <p>An intuitive JavaScript form validation tool that helps users fill forms correctly with instant feedback.</p>
           </div>
@@ -85,7 +85,7 @@
       </div>
     </section>
 
-    <section id="interests" class="section fade-in delay-4">
+    <section id="interests" class="section fade-in delay-4" tabindex="-1">
       <div class="container">
         <h2>Hobbies & Interests</h2>
         <p>
@@ -95,10 +95,10 @@
       </div>
     </section>
 
-    <section id="contact" class="section fade-in delay-5">
+    <section id="contact" class="section fade-in delay-5" tabindex="-1">
       <div class="container">
         <h2>Contact</h2>
-        <form id="contact-form" novalidate>
+        <form id="contact-form" novalidate aria-label="Contact form">
           <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
           <input type="email" name="email" placeholder="Email" required aria-label="Email" />
           <textarea name="message" placeholder="Message" required aria-label="Message"></textarea>
@@ -108,16 +108,17 @@
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
       <p>© 2025 Chibueze Onugha | Built with HTML, CSS & JS</p>
-      <div class="social-links">
-        <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer">🐱 GitHub</a>
-        <a href="https://linkedin.com/in/chibueze-onugha" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-        <a href="mailto:c.onugha@alustudent.com">✉️ Email</a>
+      <div class="social-links" role="list">
+        <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="GitHub">🐱 GitHub</a>
+        <a href="https://linkedin.com/in/chibueze-onugha" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="LinkedIn">🔗 LinkedIn</a>
+        <a href="mailto:c.onugha@alustudent.com" role="listitem" aria-label="Email">✉️ Email</a>
       </div>
     </div>
   </footer>
 </body>
 </html>
+
 
