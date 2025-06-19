@@ -1,44 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Toggle mobile nav menu
   const toggleMenu = document.getElementById("toggle-menu");
   const navbar = document.getElementById("navbar");
 
+  // Toggle mobile nav menu
   toggleMenu.addEventListener("click", () => {
     navbar.classList.toggle("active");
     const expanded = toggleMenu.getAttribute("aria-expanded") === "true" || false;
     toggleMenu.setAttribute("aria-expanded", !expanded);
   });
 
-  // Smooth scroll for nav links
-  document.querySelectorAll("nav ul li a").forEach(link => {
+  // Smooth scroll on nav link click
+  document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
       const targetId = link.getAttribute("href").slice(1);
-      const target = document.getElementById(targetId);
-      if (target) {
+      const section = document.getElementById(targetId);
+      if (section) {
         window.scrollTo({
-          top: target.offsetTop - 60,
+          top: section.offsetTop - 60,
           behavior: "smooth"
         });
+        // Close mobile nav after clicking
+        navbar.classList.remove("active");
+        toggleMenu.setAttribute("aria-expanded", false);
       }
-
-      // Close mobile nav
-      navbar.classList.remove("active");
-      toggleMenu.setAttribute("aria-expanded", false);
     });
   });
 
-  // Highlight active nav link on scroll
-  const navLinks = document.querySelectorAll("nav ul li a");
+  // Highlight active nav link based on scroll position
+  const navLinks = document.querySelectorAll("nav a");
   const sections = document.querySelectorAll("section");
 
   window.addEventListener("scroll", () => {
-    let scrollPos = window.scrollY + 100;
+    let pos = window.scrollY + 100;
     sections.forEach(section => {
-      if (
-        scrollPos >= section.offsetTop &&
-        scrollPos < section.offsetTop + section.offsetHeight
-      ) {
+      if (pos >= section.offsetTop && pos < section.offsetTop + section.offsetHeight) {
         navLinks.forEach(link => {
           link.classList.remove("active-link");
           if (link.getAttribute("href").slice(1) === section.id) {
@@ -47,8 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
-
-    // Show/hide back-to-top button
     backToTop.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
@@ -58,68 +52,80 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = form.name.value.trim();
     const email = form.email.value.trim();
     const message = form.message.value.trim();
-
     if (!name || !email || !message) {
       e.preventDefault();
       alert("Please fill out all fields before submitting.");
     }
   });
 
-  // Back-to-top button
+  // Back-to-top button creation and behavior
   const backToTop = document.createElement("button");
   backToTop.textContent = "↑";
   backToTop.setAttribute("aria-label", "Back to top");
-  backToTop.style.position = "fixed";
-  backToTop.style.bottom = "2rem";
-  backToTop.style.right = "1.5rem";
-  backToTop.style.padding = "0.5rem 0.75rem";
-  backToTop.style.border = "none";
-  backToTop.style.borderRadius = "50%";
-  backToTop.style.backgroundColor = "#1ad1ff";
-  backToTop.style.color = "#0d1117";
-  backToTop.style.fontSize = "1.5rem";
-  backToTop.style.cursor = "pointer";
-  backToTop.style.display = "none";
-  backToTop.style.zIndex = "999";
-  backToTop.style.boxShadow = "0 0 10px #1ad1ffcc";
-  backToTop.style.transition = "opacity 0.3s ease";
+  Object.assign(backToTop.style, {
+    position: "fixed",
+    bottom: "2rem",
+    right: "1.5rem",
+    padding: "0.5rem 0.75rem",
+    border: "none",
+    borderRadius: "50%",
+    backgroundColor: "#1ad1ff",
+    color: "#0d1117",
+    fontSize: "1.5rem",
+    cursor: "pointer",
+    display: "none",
+    zIndex: "999",
+    boxShadow: "0 0 10px #1ad1ffcc",
+    transition: "opacity 0.3s ease"
+  });
   document.body.appendChild(backToTop);
-
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // Dark/Light mode toggle with persistence
+  // Dark/Light mode toggle button creation and behavior
   const toggleDarkMode = document.createElement("button");
   toggleDarkMode.innerHTML = "🌙";
-  toggleDarkMode.setAttribute("aria-label", "Toggle dark mode");
-  toggleDarkMode.style.position = "fixed";
-  toggleDarkMode.style.bottom = "2rem";
-  toggleDarkMode.style.left = "1.5rem";
-  toggleDarkMode.style.padding = "0.5rem 0.75rem";
-  toggleDarkMode.style.border = "none";
-  toggleDarkMode.style.borderRadius = "50%";
-  toggleDarkMode.style.backgroundColor = "#1ad1ff";
-  toggleDarkMode.style.color = "#0d1117";
-  toggleDarkMode.style.fontSize = "1.3rem";
-  toggleDarkMode.style.cursor = "pointer";
-  toggleDarkMode.style.zIndex = "999";
-  toggleDarkMode.style.boxShadow = "0 0 10px #1ad1ffcc";
+  toggleDarkMode.setAttribute("aria-label", "Toggle theme");
+  Object.assign(toggleDarkMode.style, {
+    position: "fixed",
+    bottom: "2rem",
+    left: "1.5rem",
+    padding: "0.5rem 0.75rem",
+    border: "none",
+    borderRadius: "50%",
+    backgroundColor: "#1ad1ff",
+    color: "#0d1117",
+    fontSize: "1.3rem",
+    cursor: "pointer",
+    zIndex: "999",
+    boxShadow: "0 0 10px #1ad1ffcc"
+  });
   document.body.appendChild(toggleDarkMode);
 
-  // Apply saved theme
+  // Load saved theme or default to light mode
   const currentTheme = localStorage.getItem("theme");
   if (currentTheme === "dark") {
     document.body.classList.add("dark-mode");
     toggleDarkMode.textContent = "☀️";
+  } else {
+    document.body.classList.add("light-mode");
+    toggleDarkMode.textContent = "🌙";
   }
 
+  // Toggle theme on button click
   toggleDarkMode.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    toggleDarkMode.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    if (document.body.classList.contains("dark-mode")) {
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+      toggleDarkMode.textContent = "🌙";
+      localStorage.setItem("theme", "light");
+    } else {
+      document.body.classList.remove("light-mode");
+      document.body.classList.add("dark-mode");
+      toggleDarkMode.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
+    }
   });
 });
-
 
