@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Toggle mobile navigation
+  // Mobile nav toggle
   const toggleMenu = document.getElementById("toggle-menu");
   const navbar = document.getElementById("navbar");
 
@@ -7,26 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("active");
   });
 
-  // Scroll-triggered animations
-  const sections = document.querySelectorAll(".section");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  // Scroll animations handled by CSS fade-in classes triggered at load (for simplicity)
 
-  sections.forEach((section) => {
-    section.classList.add("hidden");
-    observer.observe(section);
-  });
-
-  // Back to top button
+  // Back to top button setup
   const backToTop = document.createElement('button');
   backToTop.textContent = '↑';
   backToTop.setAttribute('aria-label', 'Back to top');
@@ -38,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   backToTop.style.border = 'none';
   backToTop.style.borderRadius = '4px';
   backToTop.style.cursor = 'pointer';
-  backToTop.style.backgroundColor = '#006d77';
-  backToTop.style.color = '#fff';
+  backToTop.style.backgroundColor = '#ff7f50';
+  backToTop.style.color = '#121212';
   backToTop.style.display = 'none';
   backToTop.style.zIndex = '1000';
   backToTop.style.transition = 'opacity 0.3s ease';
@@ -49,10 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // Show/hide back to top on scroll
+  window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+
   // Dark/Light mode toggle button
   const darkToggle = document.createElement("button");
-  darkToggle.textContent = "🌙"; // Moon icon for dark mode
   darkToggle.setAttribute("aria-label", "Toggle Dark/Light Mode");
+  darkToggle.textContent = "🌙"; // Moon icon for dark mode
   darkToggle.style.position = "fixed";
   darkToggle.style.bottom = "1rem";
   darkToggle.style.right = "1rem";
@@ -61,31 +49,39 @@ document.addEventListener("DOMContentLoaded", () => {
   darkToggle.style.border = "none";
   darkToggle.style.borderRadius = "50%";
   darkToggle.style.cursor = "pointer";
-  darkToggle.style.background = "#eee";
-  darkToggle.style.transition = "background-color 0.3s";
+  darkToggle.style.background = "#ffa64d";
+  darkToggle.style.color = "#121212";
+  darkToggle.style.boxShadow = "0 0 15px #ff7f50cc";
+  darkToggle.style.transition = "background-color 0.3s, color 0.3s";
   document.body.appendChild(darkToggle);
 
-  // Load saved mode from localStorage if any
-  if (localStorage.getItem("mode") === "light") {
+  // Load mode from localStorage
+  const currentMode = localStorage.getItem("mode");
+  if (currentMode === "light") {
     document.body.classList.remove("dark-mode");
     darkToggle.textContent = "☀️";
+    darkToggle.style.background = "#121212";
+    darkToggle.style.color = "#ffa64d";
   } else {
     document.body.classList.add("dark-mode");
-    darkToggle.textContent = "🌙";
   }
 
   darkToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     if (document.body.classList.contains("dark-mode")) {
       darkToggle.textContent = "🌙";
+      darkToggle.style.background = "#ffa64d";
+      darkToggle.style.color = "#121212";
       localStorage.setItem("mode", "dark");
     } else {
       darkToggle.textContent = "☀️";
+      darkToggle.style.background = "#121212";
+      darkToggle.style.color = "#ffa64d";
       localStorage.setItem("mode", "light");
     }
   });
 
-  // Smooth scrolling for nav links
+  // Smooth scroll nav links
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -93,11 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetSection = document.getElementById(targetId);
       if(targetSection) {
         window.scrollTo({
-          top: targetSection.offsetTop - 60,
+          top: targetSection.offsetTop - 70,
           behavior: 'smooth'
         });
       }
-      // Close nav on mobile after click
       if(navbar.classList.contains('active')) {
         navbar.classList.remove('active');
       }
@@ -106,8 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Highlight active nav link on scroll
   const navLinks = document.querySelectorAll('nav ul li a');
+  const sections = document.querySelectorAll(".section");
+
   window.addEventListener('scroll', () => {
-    let scrollPos = window.scrollY + 70;
+    let scrollPos = window.scrollY + 80;
     sections.forEach(section => {
       if (
         scrollPos >= section.offsetTop &&
@@ -121,16 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
-
-    // Show/hide back-to-top button
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
   });
 
-  // Form validation
+  // Simple form validation
   const form = document.getElementById("contact-form");
   form.addEventListener("submit", function (e) {
     const name = this.name.value.trim();
@@ -144,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  });
 });
 
-
+  });
+});
