@@ -83,49 +83,5 @@ document.addEventListener("DOMContentLoaded", () => {
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
-  // Dark/Light mode toggle button creation and behavior
-  const toggleDarkMode = document.createElement("button");
-  toggleDarkMode.innerHTML = "🌙";
-  toggleDarkMode.setAttribute("aria-label", "Toggle theme");
-  Object.assign(toggleDarkMode.style, {
-    position: "fixed",
-    bottom: "2rem",
-    left: "1.5rem",
-    padding: "0.5rem 0.75rem",
-    border: "none",
-    borderRadius: "50%",
-    backgroundColor: "#1ad1ff",
-    color: "#0d1117",
-    fontSize: "1.3rem",
-    cursor: "pointer",
-    zIndex: "999",
-    boxShadow: "0 0 10px #1ad1ffcc"
-  });
-  document.body.appendChild(toggleDarkMode);
-
-  // Load saved theme or default to light mode
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    toggleDarkMode.textContent = "☀️";
-  } else {
-    document.body.classList.add("light-mode");
-    toggleDarkMode.textContent = "🌙";
-  }
-
-  // Toggle theme on button click
-  toggleDarkMode.addEventListener("click", () => {
-    if (document.body.classList.contains("dark-mode")) {
-      document.body.classList.replace("dark-mode", "light-mode");
-      toggleDarkMode.textContent = "🌙";
-      localStorage.setItem("theme", "light");
-    } else {
-      document.body.classList.replace("light-mode", "dark-mode");
-      toggleDarkMode.textContent = "☀️";
-      localStorage.setItem("theme", "dark");
-    }
-  });
 });
-
 
