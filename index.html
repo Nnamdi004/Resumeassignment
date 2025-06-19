@@ -2,116 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chibueze Onugha - Resume</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chibueze Onugha | Resume</title>
 
-  <header class="hero">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body class="dark-mode">
+  
+  <!-- Header with navigation -->
+  <header class="hero" role="banner">
     <div class="container">
       <h1 class="name">Chibueze Onugha</h1>
-      <p class="tagline">Aspiring Software Engineer & Creative Thinker</p>
-      <nav>
-        <button id="toggle-menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <p class="tagline">Front-End Developer | Problem Solver | Lifelong Learner</p>
+      <nav role="navigation" aria-label="Primary navigation">
         <ul id="navbar">
-          <li><a href="#about">About</a></li>
+          <li><a href="#about" class="active-link">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#slider">Snapshots</a></li>
+          <li><a href="#interests">Hobbies</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <button id="toggle-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar">☰</button>
       </nav>
     </div>
   </header>
 
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>Hi! I'm Chibueze, currently pursuing a <strong>Bachelor’s in Software Engineering</strong> at African Leadership University. I'm passionate about coding, design, and continuous learning.</p>
-      <p><strong>Hobbies:</strong> Football, Music, Dancing, and Hanging Out with Friends 🎵⚽💃</p>
-    </div>
-  </section>
-
-  <section id="skills" class="section bg-light">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Git</div>
-        <div class="skill">Responsive Design</div>
+  <!-- Main content -->
+  <main>
+  <!-- About Me Section -->
+    <section id="about" class="section fade-in" tabindex="-1" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About Me</h2>
+        <p>
+          I'm a passionate <span class="highlight">front-end developer</span> who enjoys building clean, responsive websites and making sure users have a great experience.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card modal-trigger">
-          <h3>My Portfolio Website</h3>
-          <p>🌐 A fully responsive portfolio site showcasing resume, projects, and contact info.</p>
-          <button class="btn-primary modal-trigger">More Info</button>
-        </div>
-        <div class="project-card">
-          <h3>Form Validator</h3>
-          <p>✅ A JS form validator with real-time feedback and user-friendly errors.</p>
+    </section>
+  
+  <!-- Skills Section -->
+    <section id="skills" class="section bg-light fade-in delay-1" tabindex="-1" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading">Skills</h2>
+        <div class="skills-grid" role="list">
+          <div class="skill" role="listitem">HTML5</div>
+          <div class="skill" role="listitem">CSS3 & Animations</div>
+          <div class="skill" role="listitem">JavaScript (ES6+)</div>
+          <div class="skill" role="listitem">Responsive Design</div>
+          <div class="skill" role="listitem">Git & GitHub</div>
+          <div class="skill" role="listitem">Debugging & Optimization</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="section fade-in delay-2" tabindex="-1" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 id="experience-heading">Work Experience</h2>
+        <article class="experience-item" aria-label="Web Developer Intern at FutureTech Inc.">
+          <h3>Web Developer Intern - FutureTech Inc.</h3>
+          <p class="duration">Jan 2025 – Apr 2025</p>
+          <p>
+            Developed sleek UI components and optimized site performance. Collaborated with designers and back-end developers in an Agile environment.
+          </p>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="section fade-in delay-3" tabindex="-1" aria-labelledby="education-heading">
+      <div class="container">
+        <h2 id="education-heading">Education</h2>
+        <article class="experience-item" aria-label="African Leadership University Education">
+          <h3>African Leadership University</h3>
+          <p class="duration">BSc in Software Engineering – Present</p>
+          <p>
+            Currently pursuing my Bachelor's in Software Engineering. My time at ALU has strengthened my problem-solving mindset, real-world collaboration skills, and entrepreneurial thinking.
+          </p>
+        </article>
+      </div>
+    </section>
 
-  <section id="slider" class="section">
-    <div class="container">
-      <h2>Project Snapshots</h2>
-      <div class="slider">
-        <img src="https://via.placeholder.com/800x400/58a6ff/ffffff?text=Project+1" class="slide active" alt="Slide 1" />
-        <img src="https://via.placeholder.com/800x400/1ad1ff/0d1117?text=Project+2" class="slide" alt="Slide 2" />
-        <img src="https://via.placeholder.com/800x400/0bbcd6/ffffff?text=Project+3" class="slide" alt="Slide 3" />
-        <div class="slider-controls">
-          <button id="prevSlide">←</button>
-          <button id="nextSlide">→</button>
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-light fade-in delay-4" tabindex="-1" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading">Projects</h2>
+        <div class="projects-grid" role="list">
+          <article class="project-card" role="listitem" tabindex="0" aria-label="My Portfolio Website project">
+            <h3>My Portfolio Website</h3>
+            <p>🌐 A fully responsive portfolio site showcasing my resume, projects, and contact details. Built with HTML, CSS, and JavaScript without any frameworks.</p>
+          </article>
+          <article class="project-card" role="listitem" tabindex="0" aria-label="Form Validator project">
+            <h3>Form Validator</h3>
+            <p>✅ JavaScript-based form validation tool that improves UX by guiding users through field completion in real-time.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    
+    <!-- Interests Section -->
+    <section id="interests" class="section fade-in delay-5" tabindex="-1" aria-labelledby="interests-heading">
+      <div class="container">
+        <h2 id="interests-heading">Hobbies & Interests</h2>
+        <p>
+          Outside of coding, I enjoy playing <span class="highlight">football</span>, listening to <span class="highlight">music</span>, <span class="highlight">dancing</span>, and <span class="highlight">hanging out with friends</span>.
+        </p>
+      </div>
+    </section>
 
-  <section id="contact" class="section bg-light">
-    <div class="container">
-      <h2>Contact</h2>
-      <form id="contact-form">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
-    </div>
-  </section>
+    <!-- Contacts Section -->
+    <section id="contact" class="section fade-in delay-5" tabindex="-1" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Contact</h2>
+        <form id="contact-form" novalidate aria-describedby="contact-desc">
+          <p id="contact-desc" class="visually-hidden">Contact form to send me a message with your name, email, and message.</p>
+          <label for="name" class="visually-hidden">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" />
+          
+          <label for="email" class="visually-hidden">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" required aria-required="true" />
+          
+          <label for="message" class="visually-hidden">Message</label>
+          <textarea id="message" name="message" placeholder="Message" required aria-required="true"></textarea>
+          
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2025 Chibueze Onugha. All rights reserved.</p>
+      <p>© 2025 Chibueze Onugha | Built with HTML, CSS & JS</p>
       <div class="social-links">
-        <a href="#">LinkedIn 🔗</a>
-        <a href="#">GitHub 💻</a>
-        <a href="#">Twitter 🐦</a>
+        <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+        <a href="https://www.linkedin.com/in/chibueze-onugha-847618312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+        <a href="https://mail.google.com/mail/u/0/#inbox">🔗 Email</a>
       </div>
     </div>
   </footer>
-
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span id="modal-close">&times;</span>
-      <h2>Project Details</h2>
-      <p>This resume website was built from scratch using HTML, CSS, and JS. It demonstrates responsiveness, interactivity, and polished design.</p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
 
- 
