@@ -1,0 +1,62 @@
+/* ---------- Root Theme Variables ---------- */
+:root {
+  --primary-color: #004aad;
+  --accent-color: #f4f4f4;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+/* ---------- General Body Styles ---------- */
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Header and Footer ---------- */
+header,
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+/* ---------- Navigation Menu Styles ---------- */
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 1em;
+  padding: 0;
+}
+
+/* ---------- Mobile Menu Button ---------- */
+#toggle-menu {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+}
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  #toggle-menu {
+    display: block;
+  }
+}
+
+/* ---------- Section Padding ---------- */
+section {
+  padding: 2em;
+}
