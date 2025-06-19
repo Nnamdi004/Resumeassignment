@@ -1,4 +1,4 @@
-// === Toggle Navigation Menu ===
+// === NAVBAR TOGGLE ===
 const navToggle = document.getElementById("toggle-menu");
 const navbar = document.getElementById("navbar");
 
@@ -6,7 +6,8 @@ navToggle.addEventListener("click", () => {
   navbar.classList.toggle("active");
 });
 
-// === Modal Functionality ===
+
+// === MODAL POPUP ===
 const modal = document.getElementById("modal");
 const modalTriggers = document.querySelectorAll(".modal-trigger");
 const modalClose = document.getElementById("modal-close");
@@ -21,17 +22,18 @@ modalClose.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
+window.addEventListener("click", event => {
+  if (event.target === modal) {
     modal.style.display = "none";
   }
 });
 
-// === Slider Functionality ===
+
+// === IMAGE SLIDER ===
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slide");
-const next = document.getElementById("nextSlide");
-const prev = document.getElementById("prevSlide");
+const nextSlide = document.getElementById("nextSlide");
+const prevSlide = document.getElementById("prevSlide");
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
@@ -39,27 +41,30 @@ function showSlide(index) {
   });
 }
 
-next.addEventListener("click", () => {
+// Next button
+nextSlide.addEventListener("click", () => {
   slideIndex = (slideIndex + 1) % slides.length;
   showSlide(slideIndex);
 });
 
-prev.addEventListener("click", () => {
+// Previous button
+prevSlide.addEventListener("click", () => {
   slideIndex = (slideIndex - 1 + slides.length) % slides.length;
   showSlide(slideIndex);
 });
 
-// Auto-slide every 5 seconds
+// Auto-play every 5 seconds
 setInterval(() => {
   slideIndex = (slideIndex + 1) % slides.length;
   showSlide(slideIndex);
 }, 5000);
 
-// === Form Validation ===
+
+// === CONTACT FORM VALIDATION ===
 const form = document.getElementById("contact-form");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+form.addEventListener("submit", event => {
+  event.preventDefault();
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -70,21 +75,8 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  if (!validateEmail(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  alert("Message sent successfully! 🚀");
+  // If all fields are valid
+  alert("Thank you for your message!");
   form.reset();
 });
-
-// === Helper Function for Email Validation ===
-function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
-
-
-
 
