@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #121212;
+  color: #e0e0e0;
   line-height: 1.6;
 }
 
@@ -14,20 +14,21 @@ body {
 }
 
 h1, h2, h3 {
-  color: #222;
+  color: #ffffff;
 }
 
 /* Header */
 .hero {
-  background-color: #005f73;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
-  padding: 2rem 0;
+  padding: 3rem 0;
   text-align: center;
 }
 
 .tagline {
   font-style: italic;
   margin-top: 0.5rem;
+  color: #d0f0f0;
 }
 
 nav ul {
@@ -35,22 +36,27 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-top: 1rem;
 }
 
 nav ul li a {
-  color: white;
+  color: #c0f0ff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
 }
 
 #toggle-menu {
   display: none;
   background: transparent;
   border: none;
-  font-size: 1.5rem;
-  color: white;
+  font-size: 1.8rem;
+  color: #c0f0ff;
 }
 
 /* Section Layout */
@@ -59,7 +65,7 @@ nav ul li a {
 }
 
 .bg-light {
-  background-color: #f1f1f1;
+  background-color: #1e1e1e;
 }
 
 /* Skills */
@@ -71,10 +77,12 @@ nav ul li a {
 }
 
 .skill {
-  background-color: #e0fbfc;
+  background-color: #2d2d2d;
   padding: 1rem;
   text-align: center;
   border-radius: 6px;
+  color: #aef;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* Experience */
@@ -83,7 +91,7 @@ nav ul li a {
 }
 
 .duration {
-  color: #555;
+  color: #bbb;
   font-style: italic;
 }
 
@@ -96,15 +104,17 @@ nav ul li a {
 }
 
 .project-card {
-  padding: 1rem;
-  background: #fff;
+  padding: 1.5rem;
+  background: #232323;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #d0f0f0;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Contact Form */
@@ -118,12 +128,14 @@ form {
 input, textarea {
   padding: 0.75rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   border-radius: 4px;
+  background-color: #1b1b1b;
+  color: #fff;
 }
 
 button {
-  background-color: #005f73;
+  background-color: #006d77;
   color: white;
   border: none;
   padding: 0.75rem;
@@ -134,15 +146,16 @@ button {
 }
 
 button:hover {
-  background-color: #0a9396;
+  background-color: #83c5be;
+  color: #000;
 }
 
 /* Footer */
 footer {
-  background: #002e2e;
-  color: white;
+  background: #0b0c10;
+  color: #ccc;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 
 .social-links {
@@ -153,13 +166,13 @@ footer {
 }
 
 .social-links a {
-  color: white;
+  color: #61dafb;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #94d2bd;
+  color: #ffffff;
 }
 
 /* Responsive Navigation */
@@ -191,32 +204,27 @@ footer {
   transform: translateY(0);
 }
 
-/* Dark Mode */
+/* Dark Mode (default now) */
 .dark-mode {
-  background-color: #1e1e1e;
+  background-color: #121212;
   color: #e0e0e0;
 }
 
 .dark-mode .project-card {
-  background-color: #2e2e2e;
+  background-color: #232323;
 }
 
 .dark-mode .skill {
-  background-color: #3a3a3a;
+  background-color: #2d2d2d;
 }
 
 .dark-mode input,
 .dark-mode textarea {
-  background-color: #333;
+  background-color: #1b1b1b;
   color: #fff;
-  border: 1px solid #666;
+  border: 1px solid #444;
 }
 
 .dark-mode button {
-  background-color: #222;
-}
-
-/* ---------- Section Padding ---------- */
-section {
-  padding: 2em;
+  background-color: #006d77;
 }
