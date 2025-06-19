@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chibueze Onugha | Resume</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header with navigation -->
   <header class="hero">
     <div class="container">
       <h1>Chibueze Onugha</h1>
@@ -21,20 +21,25 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="toggle-menu">☰</button>
+        <button id="toggle-menu" aria-label="Toggle navigation menu">☰</button>
       </nav>
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- Main content -->
   <main>
+    <!-- About Me Section -->
     <section id="about" class="section">
       <div class="container">
         <h2>About Me</h2>
-        <p>I am a passionate front-end web developer with a strong background in crafting accessible, responsive digital interfaces. I enjoy building things that live on the web.</p>
+        <p>
+          I am a passionate front-end web developer with a strong background in crafting accessible, responsive digital interfaces.
+          I enjoy building things that live on the web, focusing on performance and user experience.
+        </p>
       </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="section bg-light">
       <div class="container">
         <h2>Skills</h2>
@@ -49,41 +54,46 @@
       </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience" class="section">
       <div class="container">
         <h2>Work Experience</h2>
         <article class="experience-item">
           <h3>Web Developer Intern - FutureTech Inc.</h3>
           <p class="duration">Jan 2025 - Apr 2025</p>
-          <p>Contributed to internal tools using modern HTML, CSS, and JavaScript. Collaborated in agile sprints and enhanced UI responsiveness.</p>
+          <p>
+            Contributed to internal tools using modern HTML, CSS, and JavaScript.
+            Collaborated in agile sprints and enhanced UI responsiveness.
+          </p>
         </article>
       </div>
     </section>
 
-    <!-- PROJECTS (Updated with hover styles) -->
+    <!-- Projects Section -->
     <section id="projects" class="section bg-light">
       <div class="container">
         <h2>Projects</h2>
         <div class="projects-grid">
           <div class="project-card">
             <h3>My Portfolio Website</h3>
-            <p>🌐 A fully responsive portfolio site showcasing my resume and projects. Built with HTML, CSS, and JavaScript.</p>
+            <p>🌐 A fully responsive portfolio site showcasing my resume, projects, and contact details. Built with HTML, CSS, and JavaScript without any frameworks.</p>
           </div>
           <div class="project-card">
             <h3>Form Validator</h3>
-            <p>✅ Real-time form validation tool to guide users and improve UX using JavaScript.</p>
+            <p>✅ JavaScript-based form validation tool that improves UX by guiding users through field completion in real-time.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea name="message" placeholder="Message" required></textarea>
+        <form id="contact-form" novalidate>
+          <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
+          <input type="email" name="email" placeholder="Email" required aria-label="Email" />
+          <textarea name="message" placeholder="Message" required aria-label="Message"></textarea>
           <button type="submit">Send</button>
         </form>
       </div>
@@ -95,11 +105,12 @@
     <div class="container">
       <p>© 2025 Chibueze Onugha | Built with HTML, CSS & JS</p>
       <div class="social-links">
-        <a href="https://github.com/Nnamdi004" target="_blank">🔗 GitHub</a>
-        <a href="https://linkedin.com/in/chibueze-onugha" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Nnamdi004" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+        <a href="https://linkedin.com/in/chibueze-onugha" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
         <a href="mailto:c.onugha@alustudent.com">🔗 Email</a>
       </div>
     </div>
   </footer>
 </body>
 </html>
+
