@@ -1,4 +1,4 @@
-/* === GLOBAL STYLES === */
+/* === GLOBAL RESET === */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,22 +12,39 @@ body {
   line-height: 1.6;
 }
 
+/* === LINKS === */
 a {
   color: #58a6ff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+a:hover {
+  color: #1f6feb;
+}
+
+/* === LAYOUT === */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+.section {
+  padding: 3rem 0;
+}
+
+.bg-light {
+  background-color: #161b22;
+}
+
+/* === HEADINGS === */
 h1, h2, h3 {
   margin-bottom: 1rem;
   color: #58a6ff;
 }
 
+/* === BUTTONS === */
 .btn-primary {
   background-color: #58a6ff;
   color: #0d1117;
@@ -41,15 +58,6 @@ h1, h2, h3 {
 
 .btn-primary:hover {
   background-color: #1f6feb;
-}
-
-/* === SECTIONS === */
-.section {
-  padding: 3rem 0;
-}
-
-.bg-light {
-  background-color: #161b22;
 }
 
 /* === NAVIGATION === */
@@ -72,8 +80,10 @@ nav {
   background: none;
   border: none;
   color: #58a6ff;
+  cursor: pointer;
 }
 
+/* === MOBILE MENU === */
 @media (max-width: 768px) {
   #toggle-menu {
     display: block;
@@ -87,6 +97,7 @@ nav {
     right: 0;
     top: 70px;
     padding: 1rem;
+    width: 200px;
   }
 
   #navbar.active {
@@ -106,6 +117,12 @@ nav {
   padding: 1rem;
   border-radius: 6px;
   text-align: center;
+  box-shadow: 0 0 10px #1f6feb44;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: scale(1.05);
 }
 
 /* === PROJECTS === */
@@ -120,6 +137,11 @@ nav {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 10px #1f6feb77;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
 }
 
 /* === SLIDER === */
@@ -127,13 +149,14 @@ nav {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 0 15px #1f6febbb;
+  box-shadow: 0 0 15px #1f6feb99;
   margin-top: 2rem;
 }
 
 .slide {
   display: none;
   width: 100%;
+  height: auto;
 }
 
 .slide.active {
@@ -163,7 +186,7 @@ nav {
   background: #58a6ff;
 }
 
-/* === CONTACT FORM === */
+/* === FORM STYLES === */
 form input,
 form textarea {
   width: 100%;
@@ -173,6 +196,14 @@ form textarea {
   border-radius: 5px;
   background: #0d1117;
   color: #c9d1d9;
+  border: 1px solid #30363d;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #58a6ff;
+  background-color: #161b22;
 }
 
 /* === FOOTER === */
@@ -186,6 +217,11 @@ footer {
 .social-links a {
   margin: 0 10px;
   font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #58a6ff;
 }
 
 /* === MODAL === */
@@ -193,9 +229,11 @@ footer {
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(13, 17, 23, 0.9);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 17, 23, 0.95);
   align-items: center;
   justify-content: center;
 }
@@ -208,7 +246,18 @@ footer {
   max-width: 500px;
   width: 90%;
   position: relative;
+  box-shadow: 0 0 15px #1f6feb88;
 }
+
+#modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #58a6ff;
+}
+
 
 #modal-close {
   position: absolute;
